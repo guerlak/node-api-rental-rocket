@@ -1,11 +1,7 @@
 import { Category } from "../model/Category";
+import { ICategoriesRepo, ICreateCategoryDTO } from "./ICategoriesRepo";
 
-interface ICreateCategoryDTO {
-    name: string;
-    description: string
-}
-
-class CategoriesRepo {
+class CategoriesRepo implements ICategoriesRepo {
 
     private categories: Category[];
 
@@ -24,7 +20,7 @@ class CategoriesRepo {
         return cat;
     }
 
-    getCategories(): Category[] {
+    list(): Category[] {
         return this.categories;
     }
 
